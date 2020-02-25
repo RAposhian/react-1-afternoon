@@ -17,8 +17,9 @@ class Palindrome extends Component {
    reverseWord(userInput){
       let word = this.state.userInput;
       let reversed = word.split('').reverse().join('');
+      let isTrue = (reversed === word) ? true : false;
 
-      this.setState({ palindrome: reversed})
+      this.setState({ palindrome: isTrue})
    }
    
    
