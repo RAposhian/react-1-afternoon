@@ -38,8 +38,8 @@ class FilterObjects extends Component{
       let peoples = this.state.people;
       let filteredPeople = [];
   
-      for ( let i = 0; i < peoples.length; i++ ) {
-        if ( peoples[i].hasOwnProperty(prop) ) {
+      for (let i = 0; i < peoples.length; i++) {
+        if (peoples[i].hasOwnProperty(prop)) {
           filteredPeople.push(peoples[i]);
         }
       }
@@ -52,10 +52,10 @@ class FilterObjects extends Component{
       return(
          <div className="puzzleBox filterObjectPB">
             <h4>Filter Object</h4>
-      <span className="puzzleText"> { JSON.stringify(this.state.people, null, 10) } </span>
+      <span className="puzzleText"> Original: { JSON.stringify(this.state.people, null, 10) } </span>
             <input className="inputLine" onChange={ (e) => this.handleChange(e.target.value) }></input>
             <button className="confirmationButton" onClick={ () => { this.filterPeople(this.state.userInput) }}>Filter</button>
-      <span className ="resultsBox filterObjectRB"> { JSON.stringify(this.state.filteredPeople, null, 10)} </span>
+      <span className ="resultsBox filterObjectRB"> Filtered: { JSON.stringify(this.state.filteredPeople, null, 10)} </span>
          </div>
       )
    }
